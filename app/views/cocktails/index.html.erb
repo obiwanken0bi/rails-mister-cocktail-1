@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="navbar">
+    <div id="logo">
+      <p>💩 💩 💩 💩 💩</p>
+    </div>
+    <div id="search-bar"></div>
+    <div class="btn btn-primary"><%= link_to "Add a cocktail", new_cocktail_path, class: "btn btn-primary"%></div>
+  </div>
+  <h1>My cocktails</h1>
+
+  <div class="cocktails-list">
+    <% @cocktails.each do |cocktail| %>
+      <%= link_to cocktail_path(cocktail) do %>
+        <div class="card">
+          <h2><%= cocktail.name %></h2>
+          <ul class="ingredients-list display-on-hover">
+            <% cocktail.ingredients.each do |ingredient| %>
+              <li><%= ingredient.name %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
