@@ -5,8 +5,8 @@
   <div class="ingredients-card">
     <h2>Ingredients :</h2>
     <ul class="ingredients-list">
-      <% @cocktail.ingredients.each do |ingredient| %>
-        <li><%= ingredient.name %> - <%=  %> (<%= link_to "delete", cocktail_dose_path(@cocktail),
+      <% @cocktail.doses.each do |dose| %>
+        <li><%= dose.ingredient.name %> - <%= dose.description %> (<%= link_to "delete", dose_path(dose),
           method: :delete,
           data: { confirm: "Are you sure?" } %>)</li>
       <% end %>
